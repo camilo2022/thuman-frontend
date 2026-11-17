@@ -1,0 +1,254 @@
+<script setup>
+import { onMounted, onUnmounted } from "vue"
+
+const props = defineProps({
+    modelContractType: Object,
+    fileSubtypes: Array,
+    errors: {
+        type: Object,
+        default: () => ({})
+    }
+})
+
+function formatSentences(text) {
+    if (!text) return "";
+    text = text.toLowerCase();
+    // NO usar trim aquí → respeta espacios del usuario
+    return text.replace(/(^\s*[a-záéíóúñ])|([.?!]\s+[a-záéíóúñ])/gi, match => {
+        return match.toUpperCase();
+    });
+}
+
+const emit = defineEmits(['closeModals', 'submitContractTypeUpdate']);
+
+onMounted(() => document.body.style.overflow = "hidden")
+onUnmounted(() => document.body.style.overflow = "")
+</script>
+
+<template>
+    <div class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-box">
+
+                <!-- HEADER -->
+                <div class="modal-header">
+                    <h1 class="modal-title">Editar tipo de contrato</h1>
+                </div>
+
+                <!-- BODY (dos columnas como en la imagen) -->
+                <section class="modal-body">
+                    <div class="info">
+                        Registre la información requerida
+                    </div>
+                    <div class="content-container">
+
+                        <!-- 2x2 -->
+                        <div class="grid-top">
+                            <div>
+                                <label class="label-bold" for="name">Nombre</label>
+                                <input type="text" v-model="props.modelContractType.name" name="name" id="name"
+                                    class="input-box" placeholder="Nombre" maxlength="80"
+                                    :class="{ 'input-error': props.errors?.contractType_name }">
+                                <p v-for="(msg, i) in props.errors?.contractType_name ?? []" :key="'type-' + i"
+                                    class="error-text">
+                                    {{ msg }}
+                                </p>
+                            </div>
+
+                            <div class="">
+                                <label class="label-bold" for="description">Descripción</label>
+                                <div class="textarea-wrapper">
+                                    <textarea v-model="props.modelContractType.description" name="description"
+                                        id="description" placeholder="Descripción" maxlength="500" rows="5"
+                                        class="text-area"
+                                        :class="{ 'input-error': props.errors?.contractType_description }"></textarea>
+                                    <div :class="{ 'display-data': props.errors?.contractType_description }">
+                                        <p v-if="props.errors?.contractType_description" class="error-text">
+                                            {{ props.errors?.contractType_description[0] }}
+                                        </p>
+
+                                        <div class="char-limit-text">
+                                            ({{ (props.modelContractType.description || '').length }}/500)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FOOTER -->
+                <footer class="modal-footer">
+                    <button class="btn btn-secondary" @click="emit('closeModals')">Cancelar</button>
+                    <button class="btn btn-primary"
+                        @click="emit('submitContractTypeUpdate', props.modelContractType)">Guardar</button>
+                </footer>
+
+            </div>
+        </div>
+    </div>
+</template>
+
+<style scoped>
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem 2rem;
+    align-items: center;
+    padding: 10px;
+}
+
+[class*="icheck-"] {
+    min-height: 18px;
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+    padding-left: 0px;
+}
+
+.icheck-inline {
+    display: inline-block;
+}
+
+[class*="icheck-"]>label {
+    padding-left: 31px !important;
+    min-height: 18px;
+    line-height: 18px;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+[class*="icheck-"]>input:first-child {
+    position: absolute !important;
+    opacity: 0;
+    margin: 0;
+}
+
+[class*="icheck-"]>input:first-child:disabled {
+    cursor: default;
+}
+
+[class*="icheck-"]>input:first-child+label::before,
+[class*="icheck-"]>input:first-child+input[type="hidden"]+label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #D3CFC8;
+    border-radius: 0px;
+    margin-left: -30px;
+    margin-top: 2px;
+}
+
+[class*="icheck-"]>input:first-child:checked+label::after,
+[class*="icheck-"]>input:first-child:checked+input[type="hidden"]+label::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 10px;
+    border: solid 2px #fff;
+    border-left: none;
+    border-top: none;
+    transform: translate(7.75px, 4.5px) rotate(45deg);
+    -ms-transform: translate(7.75px, 4.5px) rotate(45deg);
+}
+
+[class*="icheck-"]>input:first-child:not(:checked):not(:disabled):hover+label::before,
+[class*="icheck-"]>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
+    border-width: 2px;
+}
+
+[class*="icheck-"]>input:first-child:disabled+label,
+[class*="icheck-"]>input:first-child:disabled+input[type="hidden"]+label,
+[class*="icheck-"]>input:first-child:disabled+label::before,
+[class*="icheck-"]>input:first-child:disabled+input[type="hidden"]+label::before {
+    pointer-events: none;
+    cursor: default;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: .65;
+}
+
+.icheck-default>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-default>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
+    border-color: #4b3bbf;
+}
+
+.icheck-default>input:first-child:checked+label::before,
+.icheck-default>input:first-child:checked+input[type="hidden"]+label::before {
+    background-color: #4b3bbf;
+    border-color: #4b3bbf;
+}
+
+.icheck-default>label {
+    font-size: 14px;
+}
+
+.block+.block {
+    margin-top: 18px
+}
+
+.block h4 {
+    color: #4b3bbf;
+    margin: 0 0 8px;
+}
+
+.card-description {
+    font-size: .85rem;
+    color: #666;
+}
+
+/* Estilos modal */
+.modal-container {
+    padding: 10px;
+    background-color: #eee;
+    border-radius: 18px;
+}
+
+/* bloque superior: 2x2 */
+.grid-top {
+    display: grid;
+    gap: 8px;
+}
+
+/* filas que deben ocupar todo el ancho (textarea, separador, etc.) */
+.row-span-2 {
+    grid-column: 1 / -1;
+}
+
+/* bloque posterior al hr en una sola columna */
+.post-hr {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+/* Evita alturas fijas dentro del body */
+.content-container {
+    display: grid;
+    gap: 10px;
+}
+
+/* Caja del modal: crece con contenido hasta un tope y luego scroll en body */
+.modal-box {
+    background: linear-gradient(180deg, #EAE6FF 0%, #EFECFF 3.6%, #F5F3FF 7.35%, #F9F8FF 11.48%, #FFF 14.97%, #FFF 60.05%, #FFF 100%);
+    border-radius: 10px;
+    border: 0.5px solid var(--Font-Color-palet-color1-Gris, #CFCECE);
+    max-width: 500px;
+    width: 90vw;
+    height: 100%;
+    max-height: 800px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+</style>

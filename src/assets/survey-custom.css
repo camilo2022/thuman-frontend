@@ -1,0 +1,547 @@
+* {
+  font-family: "Twemoji Country Flags", "Poppins", sans-serif !important;
+}
+
+.svc-creator,
+.svc-creator * {
+  --sjs-primary-backcolor: #5b4cd0 !important;
+  --sjs-primary-forecolor: #ffffff !important;
+}
+
+.sd-root-modern,
+.sd-root-modern * {
+  --sjs-primary-backcolor: #5b4cd0 !important;
+  --sjs-primary-forecolor: #ffffff !important;
+}
+
+.svc-search {
+  background-color: #ffffff !important;
+}
+
+.svc-toolbox__search-container {
+  background-color: #ffffff !important;
+}
+
+.svc-scroll__wrapper {
+  background-color: #ffffff !important;
+}
+
+.svc-flex-column {
+  background-color: #ffffff !important;
+}
+
+.svc-element__add-new-question {
+  border: solid 2px #5b4cd0 !important;
+  border-radius: 10px !important;
+}
+
+.svc-element__add-new-question:focus,
+.svc-element__add-new-question:active,
+.svc-element__add-new-question.svc-element__add-new-question--selected {
+  outline: none !important;
+  border-color: #5b4cd0 !important;
+
+  /* Anula las variables que ponen el verde */
+  --sjs-primary-backcolor: #5b4cd0 !important;
+  --sjs-primary-forecolor: #5b4cd0 !important;
+}
+
+.svc-add-new-item-button__text {
+  color: #5b4cd0 !important;
+}
+
+/* Forzar color morado en TODOS los paths */
+.svc-toolbox__item svg,
+.svc-toolbox__item svg *,
+.svc-toolbox__item .sv-svg-icon use {
+  fill: #6d4eff !important;
+}
+
+.svc-toolbox__item-banner {
+  fill: #6d4eff !important;
+}
+
+.svc-tabbed-menu-item--selected:hover,
+.svc-tabbed-menu-item--selected:focus {
+  background: var(
+    --ctr-menu-item-background-color,
+    var(--sjs-general-backcolor, var(--background, #fff))
+  );
+  box-shadow: inset 0px -2px 0px var(--ctr-menu-item-border-color-selected, var(--sjs-primary-backcolor, var(--primary, #5b4cd0)));
+}
+
+.svc-tabbed-menu-item--selected {
+  background: var(
+    --ctr-menu-item-background-color,
+    var(--sjs-general-backcolor, var(--background, #fff))
+  );
+  box-shadow: inset 0px -2px 0px var(--ctr-menu-item-border-color-selected, var(--sjs-primary-backcolor, var(--primary, #5b4cd0)));
+}
+
+/* .sv-svg-icon {
+  fill: #6d4eff !important;
+} */
+
+symbol[id^="icon-toolbox-"] *,
+symbol[id^="icon-toolbox-"] path,
+symbol[id^="icon-toolbox-"] circle,
+symbol[id^="icon-toolbox-"] rect,
+symbol[id^="icon-toolbox-"] line {
+  fill: #5b4cd0 !important;
+}
+
+.svc-toolbox__tool .sv-dots__item:hover:enabled,
+.svc-toolbox__tool .sv-dots__item:focus:enabled,
+.svc-toolbox__tool .sv-dots__item.sv-action-bar-item--pressed {
+  background-color: #e6e3ff !important;
+}
+
+.svc-search svg,
+.svc-search svg *,
+.svc-search .sv-svg-icon use {
+  fill: #5b4cd0 !important;
+}
+
+.svc-side-bar__container-header {
+  box-shadow: inset 0px -2px 0px var(--ctr-property-grid-header-border-color, var(--sjs-primary-backcolor, var(--primary, #5b4cd0)));
+}
+
+/* Cambiar color del icono cuando el action bar está activo */
+.sv-action-bar-item--active {
+  --sjs-primary-backcolor: #5b4cd0 !important;
+  --sjs-primary-forecolor: #5b4cd0 !important;
+}
+
+.spg-input:focus:not(:disabled),
+.spg-input.spg-dropdown:focus:not(:disabled),
+.spg-input.spg-dropdown:focus-within:not(:disabled),
+.spg-input-container:focus-within {
+  box-shadow: inset 0 0 0 var(--ctr-editor-border-width-focused, 2px)
+    var(
+      --ctr-editor-border-color-focused,
+      var(--sjs-primary-backcolor, var(--primary, #5b4cd0))
+    );
+}
+
+.spg-input {
+  border-radius: 5px !important;
+}
+
+.spg-panel__content {
+  background-color: #ffffff !important;
+}
+
+/* Cambiar color del icono "Hide Hint" */
+symbol#icon-hidehint-16x16 *,
+symbol#icon-hidehint-16x16 path,
+symbol#icon-hidehint-16x16 circle,
+symbol#icon-hidehint-16x16 rect,
+symbol#icon-hidehint-16x16 line {
+  fill: #5b4cd0 !important;
+  background-color: #ffffff !important;
+}
+
+symbol#icon-hint-16x16 *,
+symbol#icon-hint-16x16 path,
+symbol#icon-hint-16x16 circle,
+symbol#icon-hint-16x16 rect,
+symbol#icon-hint-16x16 line {
+  fill: #5b4cd0 !important;
+  background-color: #ffffff !important;
+}
+
+.spg-action-button:hover,
+.spg-action-button:focus {
+  background-color: #e6e3ff !important;
+}
+
+.spg-checkbox:active .spg-checkbox__rectangle,
+.spg-checkbox__control:focus:not(:disabled) + .spg-checkbox__rectangle {
+  outline: 2px solid
+    var(
+      --ctr-checkbox-border-color-focused,
+      var(--sjs-primary-backcolor, var(--primary, #5b4cd0))
+    );
+  outline-offset: -2px;
+}
+
+.spg-checkbox--checked .spg-checkbox__svg {
+  opacity: 1;
+  fill: var(
+    --ctr-checkbox-button-check-mark-color,
+    var(--sjs-primary-backcolor, var(--primary, #5b4cd0))
+  );
+}
+
+/* Cambiar estilo de la opción seleccionada del dropdown */
+.svc-list__item--selected,
+.svc-list__item--selected .svc-list__item-body {
+  background-color: #efeaff !important; /* morado MUY suave */
+  color: #5b4cd0 !important; /* texto morado */
+}
+
+/* ================================
+   ESTILO PERSONALIZADO PARA BOTONES
+   DEL spg-button-group
+   ================================ */
+
+/* Botón seleccionado */
+.spg-button-group__item--selected,
+.spg-button-group__item--selected .spg-button-group__item-decorator {
+  border-color: #5b4cd0 !important;
+  color: #5b4cd0 !important;
+  --sjs-primary-backcolor: #5b4cd0 !important;
+  --sjs-primary-forecolor: #5b4cd0 !important;
+}
+
+/* Botones por defecto (sin hover ni selected) */
+.spg-button-group__item .spg-button-group__item-decorator {
+  border-color: #ccc !important;
+  color: #2b2c34 !important;
+}
+
+/* Quitar borde verde del grupo entero */
+.spg-button-group {
+  --sjs-primary-backcolor: #5b4cd0 !important;
+  --sjs-primary-forecolor: #5b4cd0 !important;
+}
+
+/* =============================
+   BOTÓN DEL GRUPO - REESTILO TOTAL
+   ============================= */
+
+/* --- SELECCIONADO --- */
+.spg-button-group__item--selected .spg-button-group__item-decorator {
+  border-color: #5b4cd0 !important;
+  color: #5b4cd0 !important; /* texto morado */
+}
+
+.spg-button-group__item--selected .sv-string-viewer {
+  color: #5b4cd0 !important; /* corregir texto negro */
+}
+
+/* --- HOVER (opcional, suave) --- */
+.spg-button-group__item:hover .spg-button-group__item-decorator {
+  color: #5b4cd0 !important;
+}
+
+.spg-btn {
+  color: #5b4cd0 !important;
+}
+
+/* ===========================
+   HOVER CORRECTO PARA ICONOS 
+   EN BOTONES spg-action-button
+   =========================== */
+
+/* Cambia variables internas del tema SOLO en hover */
+.spg-action-button:hover {
+  --sjs-primary-forecolor: #5b4cd0 !important;
+  --sjs-primary-backcolor: #5b4cd0 !important;
+}
+
+/* Forzar color morado al icono */
+.spg-action-button:hover .sv-svg-icon,
+.spg-action-button:hover .sv-svg-icon *,
+.spg-action-button:hover .sv-svg-icon use {
+  fill: #5b4cd0 !important;
+}
+
+.spg-table__cell:not(.spg-table__cell--detail-panel) .spg-input:focus,
+.spg-table__cell:not(.spg-table__cell--detail-panel) .spg-input:focus-within {
+  box-shadow: inset 0 0 0 2px
+    var(
+      --ctr-data-table-cell-border-color-focused,
+      var(--sjs-primary-backcolor, var(--primary, #5b4cd0))
+    );
+}
+
+.spg-input:focus:not(:disabled),
+.spg-input.spg-dropdown:focus:not(:disabled),
+.spg-input.spg-dropdown:focus-within:not(:disabled),
+.spg-input-container:focus-within {
+  box-shadow: inset 0 0 0 var(--ctr-editor-border-width-focused, 2px)
+    var(
+      --ctr-editor-border-color-focused,
+      var(--sjs-primary-backcolor, var(--primary, #5b4cd0))
+    );
+}
+
+.sd-title.sd-container-modern__title {
+  display: flex;
+  align-items: center;
+  padding: var(--sd-page-vertical-padding) var(--sd-page-vertical-padding);
+  overflow: auto;
+  font-family: var(
+    --sjs-font-family,
+    var(--font-family, var(--sjs-default-font-family))
+  );
+  gap: calc(4 * (var(--sjs-base-unit, var(--base-unit, 8px))));
+  box-shadow: 0px 2px 0px var(--sjs-primary-backcolor, var(--primary, #5b4cd0));
+}
+
+/* ============================================
+   ESTILO PERSONALIZADO PARA LOGO PLACEHOLDER
+   (icono + hover + eliminación del verde)
+   ============================================ */
+
+/* Fondo morado suave + quitar hover verde */
+.svc-logo-image-placeholder:hover {
+  background-color: #f5f2ff !important; /* morado suave */
+  outline: none !important;
+
+  /* Anular colores verdes del theme */
+  --sjs-primary-backcolor: #5b4cd0 !important;
+  --sjs-primary-forecolor: #5b4cd0 !important;
+}
+
+/* Icono morado SIEMPRE */
+.svc-logo-image-placeholder svg,
+.svc-logo-image-placeholder svg *,
+.svc-logo-image-placeholder svg use {
+  fill: #5b4cd0 !important;
+}
+
+/* También eliminar hover verde interno del icono */
+.svc-logo-image-placeholder:hover svg,
+.svc-logo-image-placeholder:hover svg *,
+.svc-logo-image-placeholder:hover svg use {
+  fill: #5b4cd0 !important;
+}
+
+/* 🔥 Apaga completamente el hover naranja de las páginas */
+.svc-page__content--hovered,
+.svc-hovered,
+.svc-hovered-ready,
+.svc-page--hovered,
+.svc-page--selected,
+.svc-page__content:hover {
+  background-color: #f5f2ff !important;
+  border-color: #bca6ff !important;
+  box-shadow: none !important;
+}
+
+/* 🔥 También quita el “hover frame” que aparece dentro del editor */
+.svc-string-editor__border--hover {
+  border-color: #bca6ff !important;
+  background-color: #f5f2ff !important;
+}
+
+/* Borde morado cuando seleccionas una pregunta */
+.svc-question__adorner.svc-question__adorner--selected,
+.svc-question__adorner.svc-question__adorner--selected * {
+  --ctr-survey-element-selected-border-color: #5b4cd0 !important;
+  --ctr-survey-element-selected-icon-color: #5b4cd0 !important;
+  --sjs-primary-backcolor: #5b4cd0 !important;
+  --sjs-primary-forecolor: #5b4cd0 !important;
+  --sjs-border-color: #5b4cd0 !important;
+  --sjs-primary-text-color: #5b4cd0 !important;
+}
+
+/* Iconos de la toolbar en morado */
+.svc-survey-element-toolbar-item__icon use,
+.svc-survey-element-toolbar-item__icon,
+.svc-survey-element-toolbar__item svg,
+.svc-survey-element-toolbar__item svg * {
+  fill: #5b4cd0 !important;
+}
+
+/* Hover con borde morado suave */
+.svc-question__adorner.svc-hovered,
+.svc-question__adorner.svc-hovered-ready {
+  border-color: #2b02ce !important;
+  box-shadow: 0 0 4px rgba(40, 0, 218, 0.4) !important;
+}
+
+.svc-question__content--selected:not(.svc-question__content--dragged) {
+  box-shadow: 0 0 0 var(--ctr-survey-question-panel-border-width-selected, 2px)
+    var(
+      --ctr-survey-question-panel-border-color-selected,
+      var(--sjs-secondary-backcolor, var(--secondary, #5b4cd0))
+    );
+}
+
+.svc-page__content--selected.svc-page__content--selected {
+  box-shadow: 0 0 0 var(--ctr-survey-page-border-width-selected, 2px)
+    var(
+      --ctr-survey-page-border-color-selected,
+      var(--sjs-secondary-backcolor, var(--secondary, #5b4cd0))
+    );
+  background: var(
+    --ctr-survey-page-background-color-selected,
+    var(--sjs-secondary-backcolor-semi-light, #f5f2ff)
+  );
+}
+
+/* Iconos morados en toolbar de PÁGINA */
+.svc-page-toolbar-item__icon,
+.svc-page-toolbar-item__icon *,
+.svc-page-toolbar__item svg,
+.svc-page-toolbar__item svg *,
+.svc-page-toolbar__item .sv-svg-icon use {
+  fill: #5b4cd0 !important;
+}
+
+/* ===============================
+   Puntos del Page Navigator
+   =============================== */
+
+/* 🔘 Estado NORMAL: gris */
+.svc-page-navigator-item__dot-content {
+  background-color: #cccccc !important;
+  border: none !important;
+}
+
+/* 🔘 Punto SELECCIONADO: morado */
+.svc-page-navigator-item--selected .svc-page-navigator-item__dot-content {
+  background-color: #5b4cd0 !important;
+}
+
+/* 🔘 Punto en HOVER: morado */
+.svc-page-navigator-item-content:hover .svc-page-navigator-item__dot-content {
+  background-color: #5b4cd0 !important;
+}
+
+/* Quitar cualquier borde verde heredado */
+.svc-page-navigator-item__dot {
+  border: none !important;
+}
+
+/* Evitar que variables internas pinten verde */
+.svc-page-navigator-item-content,
+.svc-page-navigator-item--selected {
+  --sjs-primary-backcolor: #5b4cd0 !important;
+  --sjs-primary-forecolor: #5b4cd0 !important;
+}
+
+/* Quitar padding del contenedor donde está "Add Question" */
+.svc-page__content {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* También quitar padding que agrega la versión --new */
+.svc-page__content--new {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Quitar borde verde cuando el título está en foco */
+.svc-string-editor__border--focus {
+  border-color: #5b4cd0 !important;
+  box-shadow: 2px !important;
+}
+
+/* Quitar borde hover también */
+.svc-string-editor__border--hover {
+  border-color: #5b4cd0 !important;
+}
+
+/* También quitar borde del input editable */
+.sv-string-editor {
+  outline: 1 !important;
+  box-shadow: none !important;
+}
+
+/* Borde morado al pasar el mouse (hover) */
+.svc-string-editor__border--hover {
+  border: 2px solid #5b4cd0 !important;
+  border-radius: 5px !important;
+}
+
+/* Borde morado cuando está enfocado (focus) */
+.svc-string-editor__border--focus {
+  border: 2px solid #5b4cd0 !important;
+  border-radius: 5px !important;
+  box-shadow: 0 0 0 3px rgba(122, 90, 248, 0.2) !important; /* glow morado */
+}
+
+/* Asegura que el editor no aplique su propio color verde */
+.sv-string-editor {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  caret-color: #5b4cd0 !important; /* cursor morado */
+}
+
+/* Aplicar radius al contenedor exterior */
+.svc-question__adorner {
+  border-radius: 10px !important;
+  overflow: hidden !important;
+}
+
+/* Aplicar radius al contenido */
+.svc-question__content {
+  border-radius: 10px !important;
+}
+
+.svc-question__adorner:hover .svc-question__content {
+  border: 2px solid #5b4cd0 !important;
+  background: #f5f2ff !important;
+  border-radius: 10px !important;
+}
+
+.sd-rating__item-star--selected svg {
+  fill: #ffa400 !important;
+}
+
+.sd-rating__item-star--selected:not(.sd-rating__item-star--preview):focus-within
+  svg {
+  stroke: #ffa400 !important;
+}
+
+.sd-rating__item-star:not(.sd-rating__item-star--preview):focus-within svg {
+  stroke: #ffa400 !important;
+  fill: transparent;
+}
+
+.sd-radio__decorator {
+  border-radius: 20%;
+}
+
+/* Ícono del botón Agregar opción */
+.svc-item-value-controls__add .sv-svg-icon,
+.svc-item-value-controls__add .sv-svg-icon *,
+.svc-item-value-controls__add svg use {
+  fill: #5b4cd0 !important;
+}
+
+/* Solo la última carita (5ta), cuando está seleccionada */
+.sd-rating__item-smiley:last-of-type.sd-rating__item-smiley--selected {
+  --sd-rating-item-color: #5b4cd0 !important; /* fondo morado */
+  border-color: #5b4cd0 !important;
+  fill: #ffffff !important; /* icono blanco */
+}
+
+.sd-btn--action:hover {
+  background-color: #614dfa !important;
+}
+
+.svc-action-button:focus,
+.svc-action-button:hover {
+  background-color: #f5f2ff !important;
+  outline: none;
+}
+
+/* Opción seleccionada */
+.sv-list__item--selected,
+.sd-list__item--selected,
+.sv-list__item--selected .sv-list__item-body,
+.sd-list__item--selected .sd-list__item-body {
+  background-color: #efeaff !important; /* morado pastel */
+  color: #5b4cd0 !important; /* texto morado */
+  border-radius: 6px !important;
+}
+
+/* Ícono del botón limpiar del dropdown */
+.sd-dropdown_clean-button-svg,
+.sd-dropdown_clean-button-svg *,
+.sd-dropdown_clean-button-svg use {
+  fill: #5b4cd0 !important;
+}
+
+.svc-creator__banner,
+.svc-license-banner,
+.sv-license-banner {
+  display: none !important;
+}
